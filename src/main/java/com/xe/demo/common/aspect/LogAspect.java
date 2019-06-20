@@ -43,6 +43,18 @@ public class LogAspect {
 	public void serviceAspect() {
 	}
 
+	// ServiceTest层切点
+	@Pointcut("execution(public * com.xe.demo.controller.UserController.user_rolePage(..))")
+	public void serviceTestAspect() {
+	}
+
+	//前置通知Test
+	@Before("serviceTestAspect()")
+	public void doBeforeTest(JoinPoint joinPoint) {
+		System.out.println("jinru-------------");
+		System.out.println(joinPoint.toString());
+	}
+
 	// Controller层切点
 	@Pointcut("@annotation(com.xe.demo.common.annotation.ControllerLog)")
 	public void controllerAspect() {

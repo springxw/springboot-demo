@@ -38,6 +38,14 @@ public class UserController extends BaseController {
 		return "auth/user/main";
 	}
 
+	@Authority(opCode = "0104", opName = "用户权限界面")
+	@RequestMapping("user_rolePage")
+	public String user_rolePage(Map<String, Object> map) {
+		List<AuthRole> list = roleService.queryUser_role();
+		map.put("list", list);
+		return "auth/user/user_role";
+	}
+
 	@RequestMapping("queryPage")
 	@ResponseBody
 	@Authority(opCode = "0101", opName = "查询用户列表")

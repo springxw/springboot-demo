@@ -6,7 +6,7 @@
 		        <div class="text-bg"><span class="text-semibold">${loginUser.username}</span></div>
 		        <img src="${ctx}/assets/images/user-head-default.png" alt="" class="">
 		        <div class="btn-group">
-		            <a href="javascript:showModal('修改密码', 'admin/user/updatePasswdPage?id=${loginUser.id}');" data-original-title="修改密码" class="btn btn-xs btn-primary btn-outline dark add-tooltip"><i class="fa fa-cog"></i></a>
+		            <!--<a href="javascript:showModal('修改密码', 'admin/user/updatePasswdPage?id=${loginUser.id}');" data-original-title="修改密码" class="btn btn-xs btn-primary btn-outline dark add-tooltip"><i class="fa fa-cog"></i></a>-->
 		            <a href="javascript:logout()" data-original-title="退出" class="btn btn-xs btn-danger btn-outline dark add-tooltip"><i class="fa fa-power-off"></i></a>
 		            <!-- <a href="javascript:index()" data-original-title="Druid监控" class="btn btn-xs btn-danger btn-outline dark add-tooltip"><i class="fa fa-home fa-fw"></i></a> -->
 		        </div>
@@ -20,6 +20,9 @@
 		            <li opCode="0101">
 		                <a tabindex="-1" href="javascript:goPage('admin/user/mainPage')"><span class="mm-text">用户管理</span></a>
 		            </li>
+		            <li opCode="0104">
+		                <a tabindex="-1" href="javascript:goPage('admin/user/user_rolePage')"><span class="mm-text">用户权限展示</span></a>
+		            </li>
 		            <li opCode="0102">
 		                <a tabindex="-1" href="javascript:goPage('admin/role/mainPage')"> <span class="mm-text">角色管理</span></a>
 		            </li>
@@ -28,6 +31,17 @@
 		            </li>
 		        </ul>
 		    </li>
+			<li class="mm-dropdown" opCode="04">
+				<a href="#"><i class="menu-icon fa fa-shopping-cart"></i><span class="mm-text">其他页面</span></a>
+				<ul>
+					<li opCode="0401">
+						<a tabindex="-1" href="javascript:goPage('wg/pay/zfb')"><span class="mm-text">支付宝购手机</span></a>
+					</li>
+					<li opCode="0402">
+						<a tabindex="-1" href="javascript:goPage('other/callBd')"><span class="mm-text">跨域调用百度</span></a>
+					</li>
+				</ul>
+			</li>
 		    <li class="mm-dropdown" opCode="02">
 		        <a href="#"><i class="menu-icon fa fa-barcode"></i><span class="mm-text">保险管理</span></a>
 		        <ul>

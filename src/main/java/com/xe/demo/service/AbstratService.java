@@ -1,22 +1,21 @@
 package com.xe.demo.service;
 
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang3.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import com.github.pagehelper.page.PageMethod;
 import com.xe.demo.common.annotation.ServiceLog;
+import com.xe.demo.common.annotation.ServiceTestLog;
 import com.xe.demo.common.dao.DaoSupport;
 import com.xe.demo.common.pojo.AjaxResult;
 import com.xe.demo.common.pojo.PageAjax;
 import com.xe.demo.common.pojo.ParamData;
 import com.xe.demo.common.utils.AppUtil;
-
+import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.common.Mapper;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * 通用接口
@@ -327,4 +326,11 @@ public abstract class AbstratService<T> {
 		return mapper.updateByPrimaryKeySelective(entity);
 	}
 
+	/*测试查询类*/
+	@ServiceTestLog("测试查询")
+    public List<T> queryUser_role() {
+
+        List<T> tList = mapper.selectAll();
+        return tList;
+    }
 }
